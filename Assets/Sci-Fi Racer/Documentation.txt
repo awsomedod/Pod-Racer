@@ -1,0 +1,13 @@
+<------------------------Sci-Fi Racer------------------------>
+
+
+Sci-Fi Racer controls w,a,s,d
+
+
+Add in Layers: Layer 8  start, Layer 9  finish, Layer 10 terrain
+Select on Sci-Fi Racer prefab Start and Finish layers
+Select terrain layer for terrain
+In Inspector for Control Timer select start and finish layers
+
+You can build custom tracks using the road prefabs.
+                
