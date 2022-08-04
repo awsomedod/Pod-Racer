@@ -13,10 +13,4 @@ public class Map : MonoBehaviour
             map.Add(transform.GetChild(i).gameObject);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

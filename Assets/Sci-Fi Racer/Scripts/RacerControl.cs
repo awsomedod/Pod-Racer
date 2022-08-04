@@ -33,13 +33,12 @@ public class RacerControl : MonoBehaviour
 	private InputAction translateAnchor;
 	private InputAction rotateAnchor;
 
-
-
 	int m_layerMask;
 	public Vector2 calculatedInput;
 	public float accel;
 	public float deccel;
 
+	public RaceManager race;
 	void Start()
 	{
 		m_body = GetComponent<Rigidbody>();
@@ -81,6 +80,8 @@ public class RacerControl : MonoBehaviour
 	}
 	void Update()
 	{
+		if (!race.hasRaceStarted)
+			return;
 		calculatedInput.y = translateAnchor.ReadValue<Vector2>().y;
 		calculatedInput.x = rotateAnchor.ReadValue<Vector2>().x;
 		if (gameObject.GetComponent<ControlTimer>().raceIsOn == false) 
@@ -110,7 +111,6 @@ public class RacerControl : MonoBehaviour
 		// Turning
 		CurrentTurnAngle = 0.0f;
 		float turnAxis = calculatedInput.x;
-		print(turnAxis);
 		if (Mathf.Abs(turnAxis) > m_deadZone)
 			CurrentTurnAngle = turnAxis;
 		foreach(GameObject engineEffect in engineEffects)
